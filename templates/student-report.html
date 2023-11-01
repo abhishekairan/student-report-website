@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+
+<table class="border">
+    <tr>
+        <td>Enroll Number:</td>
+        <td>{{student.id}}</td>
+    </tr>
+    <tr>
+        <td>Name:</td>
+        <td>{{student.name}}</td>
+    </tr>
+    <tr>
+        <td>Course: </td>
+        <td>{{student.course}} - {{student.department}}</td>
+    </tr>
+    <tr>
+        <td>Phone Number:</td>
+        <td>{{student.phone_no}}</td>
+    </tr>
+    <tr>
+        <td>Email:</td>
+        <td>{{student.email}}</td>
+    </tr>
+    <tr>
+        <td>Address:</td>
+        <td>{{student.address}}</td>
+    </tr>
+</table>
+
+
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Subject</th>
+        <th scope="col">Marks Obtained</th>
+        <th scope="col">Total Marks</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for mark in marks %}
+      <tr>
+        <td>{{mark.subject_name}}</td>
+        <td>{{mark.mark}}</td>
+        <td>{{mark.totalMarks}}</td>
+      </tr>
+    {% endfor %}
+</table>
+    
+
+{% endblock %}
